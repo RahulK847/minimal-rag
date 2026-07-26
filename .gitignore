@@ -1,0 +1,9 @@
+# Virtual environment
+.venv/
+
+# Environment variables (keep .env.example, never commit .env)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
