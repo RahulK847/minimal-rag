@@ -30,8 +30,8 @@ CPU-only machines will take noticeably longer for the same workload, since the s
 
 ## Tradeoffs / things I know aren't ideal
 
-- Local embeddings on CPU = slow startup. Not slow per-request, just the one-time indexing cost when the server boots. To keep the indexing time manageable during development and demonstration, I limited the dataset to two PDFs.
-- FAISS index isn't saved anywhere, it's rebuilt from scratch every time the app restarts. Fine for a handful of PDFs, not great once the docs pile up.
+- FAISS index isn't saved anywhere, it's rebuilt from scratch every time the app restarts. Fine for a handful of PDFs, not great once the docs pile up — and it means every restart re-pays the full indexing cost, GPU or not. At 7 PDFs / 2,115 pages this is already a ~5 minute tax per restart, which is the point where persistence stops being a nice-to-have.
+- No GPU memory tuning beyond a fixed batch size. If someone runs this on a lower-VRAM card, batch size 64 could OOM; there's no automatic fallback for that yet, just a comment telling you to lower it by hand.
 - The prompt tells the model to only answer from the given context, but there's nothing actually verifying the answer is grounded in it beyond that instruction.
 
 ## If I had more time
