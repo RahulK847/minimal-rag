@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link href="/cdn-cgi/styles/style-2.6.0.css" rel="stylesheet"><link rel="icon" type="image/x-icon" href="//#DOMAIN#/favicon.ico"></head><title>Security Check</title><body><section class="challenge-section challenge-section--waiting challenge-section--ltr challenge-section--hide" id="en"><div class="container"><div class="challenge-section__wrapper challenge-section__wrapper--waiting"><div class="challenge-section__information"><h1 class="challenge-section__title"></h1><h1 class="challenge-section__subtitle challenge-section__subtitle--waiting">Checking your browser ...</h1><div class="challenge-section__contents"><p class="challenge-section__content">Please complete the security check to continue.</p></div><div class="redirect__captcha" id="captcha"></div></div></div></div></section><script>"use strict";
+
+var showPage = function showPage() {
+  var errorPage =document.getElementById('en');
+  var headTitleElement = document.getElementsByTagName('title');
+  var lang = 'en';
+  
+  var pageTitle = errorPage.getElementsByClassName('challenge-section__title')[0].textContent;
+  headTitleElement[0].innerHTML = pageTitle;
+  errorPage.classList.remove('challenge-section--hide');
+  afterShowPage(errorPage, lang)
+};
+
+window.addEventListener("load", showPage);</script><script type="text/javascript">window.VC_site_key = '6LdYIxIrAAAAAOK_R1FCn0OSeGDV7xojL8sIItdj';
+window.VC_key = '__vrgcsrc'
+window.VC_domain = 'inoxcva.com'
+window.VC_age = '120'
+window.VC_same_site = '; SameSite=Lax'</script><script type="text/javascript" src="/cdn-cgi/scripts/recaptcha.js"></script><script id="VCRecaptcha" defer="defer" async="async"></script></body></html>
